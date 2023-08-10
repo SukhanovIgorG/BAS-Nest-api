@@ -7,5 +7,4 @@ async function start() {
 
   await app.listen(PORT, () => console.log(`app started on ${PORT}`));
 }
-
 start();
