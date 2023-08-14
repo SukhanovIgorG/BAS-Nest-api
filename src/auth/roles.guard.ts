@@ -1,4 +1,4 @@
-import { CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
+import { CanActivate, ExecutionContext, Injectable, ForbiddenException, NotFoundException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { JwtService } from "@nestjs/jwt";
 import { Observable } from "rxjs";
@@ -18,13 +18,17 @@ export class RolesGuard implements CanActivate {
       const bearer = authHeader.split(' ')[0]
       const token = authHeader.split(' ')[1]
       if (!requiredRoles) {
-        throw new UnauthorizedException({ message: 'User not rules' })
+        throw new NotFoundException({ message: 'Роль пользователя не найдена' })
       }
       const user = this.jwtService.verify(token);
       req.user = user
-      return user.roles.some((role: { value: string }) => requiredRoles.includes(role.value));
+      if (user.roles.some((role: { value: string }) => requiredRoles.includes(role.value))) {
+        return true;
+      } else {
+        throw new ForbiddenException({ message: 'Нет прав на данную операцию' })
+      }
     } catch (e) {
-      throw new HttpException('User not rules', HttpStatus.FORBIDDEN)
+      throw new ForbiddenException({ message: 'Нет прав на данную операцию' })
     }
   }
 }
