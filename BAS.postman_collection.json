@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "5d305771-50df-49fd-8963-62817cad1c5c",
+		"name": "BAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25337482"
+	},
+	"item": [
+		{
+			"name": "auth/registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"god2@mail.ru\",\r\n    \"password\": \"0000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/auth/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"auth",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user1@mail.ru\",\r\n    \"password\": \"0000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIxQG1haWwucnUiLCJpZCI6MTksInJvbGVzIjpbeyJpZCI6MiwidmFsdWUiOiJwZW9wbGUiLCJkZXNjcmlwdGlvbiI6ItC_0L7Qu9GM0LfQvtCy0LDRgtC10LvRjCIsImNyZWF0ZWRBdCI6IjIwMjMtMDgtMTFUMTA6MDI6MzUuNDQ1WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDgtMTFUMTA6MDI6MzUuNDQ1WiJ9XSwiaWF0IjoxNjkyMDAxMDU5LCJleHAiOjE2OTIwODc0NTl9.6XJCgZ5vm8OSb4fmjqoMappQGvKdSwZckv-Hz4jAmcI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"novalidmail2\",\r\n    \"password\": \"00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdvZDJAbWFpbC5ydSIsImlkIjoyMSwicm9sZXMiOlt7ImlkIjozLCJ2YWx1ZSI6ImdvZCIsImRlc2NyaXB0aW9uIjoi0LHQvtCzIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0xNFQxMTowMjozOC44MjhaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0xNFQxMTowMjozOC44MjhaIn1dLCJpYXQiOjE2OTIwMTA5NzcsImV4cCI6MTY5MjA5NzM3N30.1lu2aMB4t19x_odyt33X57E7wu97tjW6Pg5L36uoNpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\": \"god\",\r\n    \"userId\": \"19\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/users/role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users",
+						"role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/ban",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdvZDJAbWFpbC5ydSIsImlkIjoyMSwicm9sZXMiOlt7ImlkIjozLCJ2YWx1ZSI6ImdvZCIsImRlc2NyaXB0aW9uIjoi0LHQvtCzIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0xNFQxMTowMjozOC44MjhaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0xNFQxMTowMjozOC44MjhaIn1dLCJpYXQiOjE2OTIwMTA5NzcsImV4cCI6MTY5MjA5NzM3N30.1lu2aMB4t19x_odyt33X57E7wu97tjW6Pg5L36uoNpg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"banReason\": \"Много пиздел\",\r\n    \"userId\": \"19\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/users/ban",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users",
+						"ban"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "roles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\": \"people\",\r\n    \"description\": \"пользователь\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"novalidmail2\",\r\n    \"password\": \"00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
