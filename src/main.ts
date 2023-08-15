@@ -17,8 +17,10 @@ async function start() {
     .build();
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('/swagger', app, document)
+
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(PORT, () => console.log(`app started on ${PORT}`));
 }
 start();
+
